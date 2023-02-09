@@ -1,0 +1,12 @@
+apiVersion: k8s.shanbay.io.shanbay.com/v1
+kind: CanaryDeployPlan
+metadata:
+  labels:
+    app.kubernetes.io/name: canarydeployplan
+    app.kubernetes.io/instance: canarydeployplan-sample
+    app.kubernetes.io/part-of: cdp-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: cdp-operator
+  name: canarydeployplan-sample
+spec:
+  # TODO(user): Add fields here

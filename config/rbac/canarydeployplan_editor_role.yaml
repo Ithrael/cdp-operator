@@ -1,0 +1,31 @@
+# permissions for end users to edit canarydeployplans.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: canarydeployplan-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: cdp-operator
+    app.kubernetes.io/part-of: cdp-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: canarydeployplan-editor-role
+rules:
+- apiGroups:
+  - k8s.shanbay.io.shanbay.com
+  resources:
+  - canarydeployplans
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - k8s.shanbay.io.shanbay.com
+  resources:
+  - canarydeployplans/status
+  verbs:
+  - get
